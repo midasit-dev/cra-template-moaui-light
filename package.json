@@ -1,6 +1,6 @@
 {
 	"name": "@midasit-dev/cra-template-moaui-light",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"private": false,
 	"browserslist": {
 		"production": [
