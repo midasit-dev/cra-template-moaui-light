@@ -1,5 +1,5 @@
 .r3-main {
-	@apply h-[32rem] rounded-lg  lg:col-span-3 bg-gray-200 dark:bg-gray-700;
+	@apply grid h-[32rem] rounded-lg  lg:col-span-3 bg-gray-200 dark:bg-gray-700;
 }
 
 @media (min-width: 1024px) {
