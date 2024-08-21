@@ -3,13 +3,13 @@ import "./r3.css";
 
 const App = () => {
   return (
-    <div className="bg-gray-100 dark:bg-gray-900">
+    <div className="bg-gray-100 dark:bg-gray-900 h-screen">
       <div className="grid grid-cols-1 gap-0 px-4 pt-4 pb-2">
         <div className="flex w-full h-32 rounded-lg gap-4 p-4 bg-gray-200 dark:bg-gray-700 justify-between items-center">
           <div className="flex h-32 gap-4 items-center">
-            <DropDown />
-            <DropDown />
-            <DropDown />
+            <DropDown label="Map" />
+            <DropDown label="Standard" />
+            <DropDown label="Annex" />
           </div>
           <div>
             <Button />
@@ -19,7 +19,10 @@ const App = () => {
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 px-4 py-2">
         <div className="r3-main"></div>
-        <div className="r3-r-side"></div>
+        <div className="r3-r-side">
+          <Input />
+          <DetailLists />
+        </div>
       </div>
     </div>
   );
@@ -27,17 +30,19 @@ const App = () => {
 
 export default App;
 
-const DropDown = () => {
+const DropDown = (props: any) => {
+  const { label } = props;
+
   const [isShow, setIsShow] = useState(false);
 
   return (
     <div className="relative">
-      <div className="inline-flex items-center overflow-hidden rounded-md border bg-white dark:border-gray-800 dark:bg-gray-900">
+      <div className="inline-flex items-center overflow-hidden rounded-md border bg-white dark:border-gray-800 dark:bg-gray-800">
         <a
           href="#"
           className="border-e px-4 py-2 text-sm/none text-gray-600 hover:bg-gray-50 hover:text-gray-700 dark:border-e-gray-800 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200"
         >
-          Edit
+          {label}
         </a>
 
         <button
@@ -131,7 +136,7 @@ const DropDown = () => {
 const Button = () => {
   return (
     <a
-      className="group relative inline-flex items-center overflow-hidden rounded dark:bg-gray-900 px-8 py-3 text-gray-600 dark:text-white focus:outline-none focus:ring dark:active:bg-gray-500"
+      className="group relative inline-flex items-center overflow-hidden rounded dark:bg-gray-800 px-8 py-3 text-gray-600 dark:text-white focus:outline-none focus:ring dark:active:bg-gray-500"
       href="#"
       onClick={(e) => document.documentElement.classList.toggle("dark")}
     >
@@ -157,5 +162,93 @@ const Button = () => {
         Toggle{" "}
       </span>
     </a>
+  );
+};
+
+const Input = () => {
+  return (
+    <div className="relative">
+      <label htmlFor="Search" className="sr-only">
+        {" "}
+        Search for...{" "}
+      </label>
+
+      <input
+        type="text"
+        id="Search"
+        placeholder="search for locations ..."
+        className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+      />
+
+      <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
+        <button
+          type="button"
+          className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+        >
+          <span className="sr-only">Search</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </button>
+      </span>
+    </div>
+  );
+};
+
+const DetailLists = () => {
+  return (
+    <div className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm dark:border-gray-700">
+      <dl className="-my-3 divide-y divide-gray-100 text-sm dark:divide-gray-700">
+        <div className="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4 even:dark:bg-gray-800">
+          <dt className="font-medium text-gray-900 dark:text-white">Title</dt>
+          <dd className="text-gray-700 sm:col-span-2 dark:text-gray-200">Mr</dd>
+        </div>
+
+        <div className="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4 even:dark:bg-gray-800">
+          <dt className="font-medium text-gray-900 dark:text-white">Name</dt>
+          <dd className="text-gray-700 sm:col-span-2 dark:text-gray-200">
+            John Frusciante
+          </dd>
+        </div>
+
+        <div className="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4 even:dark:bg-gray-800">
+          <dt className="font-medium text-gray-900 dark:text-white">
+            Occupation
+          </dt>
+          <dd className="text-gray-700 sm:col-span-2 dark:text-gray-200">
+            Guitarist
+          </dd>
+        </div>
+
+        <div className="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4 even:dark:bg-gray-800">
+          <dt className="font-medium text-gray-900 dark:text-white">Salary</dt>
+          <dd className="text-gray-700 sm:col-span-2 dark:text-gray-200">
+            $1,000,000+
+          </dd>
+        </div>
+
+        <div className="grid grid-cols-1 gap-1 p-3 even:bg-gray-50 sm:grid-cols-3 sm:gap-4 even:dark:bg-gray-800">
+          <dt className="font-medium text-gray-900 dark:text-white">Bio</dt>
+          <dd className="text-gray-700 sm:col-span-2 dark:text-gray-200">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et facilis
+            debitis explicabo doloremque impedit nesciunt dolorem facere, dolor
+            quasi veritatis quia fugit aperiam aspernatur neque molestiae labore
+            aliquam soluta architecto?
+          </dd>
+        </div>
+      </dl>
+    </div>
   );
 };

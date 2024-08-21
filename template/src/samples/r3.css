@@ -10,5 +10,5 @@
 }
 
 .r3-r-side {
-	@apply h-96 rounded-lg bg-gray-200 dark:bg-gray-700;
+	@apply h-auto rounded-lg bg-gray-200 dark:bg-gray-700 p-4;
 }
