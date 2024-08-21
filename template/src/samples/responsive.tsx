@@ -1,28 +1,29 @@
 import React from "react";
+import "./responsive.css";
 
 const ResponsiveLayout: React.FC = () => {
   return (
-    <div className="flex flex-col h-screen dark:bg-d-bg">
-      <header className="flex bg-l-pastel-blue dark:bg-d-pastel-blue p-4 text-l-text dark:text-d-text justify-between">
+    <div className="responsive-container">
+      <header className="responsive-header">
         <HeaderText />
         <ColorToggleButton />
       </header>
 
-      <div className="flex flex-1 flex-col md:flex-row overflow-hidden">
-        <aside className="bg-l-pastel-green dark:bg-d-pastel-green w-full md:w-64 p-4">
+      <div className="responsive-content">
+        <aside className="responsive-asides">
           <LeftSideText />
         </aside>
 
-        <main className="flex-1 bg-l-pastel-yellow dark:bg-d-pastel-yellow p-4 overflow-y-auto">
+        <main className="responsive-main">
           <MainText />
         </main>
 
-        <aside className="bg-l-pastel-pink dark:bg-d-pastel-pink w-full md:w-64 p-4">
+        <aside className="responsive-asides">
           <RightSideText />
         </aside>
       </div>
 
-      <footer className="flex p-4 bg-l-pastel-blue dark:bg-d-pastel-blue text-l-text dark:text-d-text">
+      <footer className="responsive-footer">
         <FooterText />
       </footer>
     </div>

@@ -1,0 +1,23 @@
+.responsive-container {
+	@apply flex flex-col h-screen dark:bg-d-bg
+}
+
+.responsive-header {
+	@apply flex bg-l-pastel-blue dark:bg-d-pastel-blue p-4 text-l-text dark:text-d-text justify-between
+}
+
+.responsive-content {
+	@apply flex flex-1 flex-col md:flex-row overflow-hidden
+}
+
+.responsive-asides {
+	@apply bg-l-pastel-green dark:bg-d-pastel-green w-full md:w-64 p-4
+}
+
+.responsive-main {
+	@apply flex-1 bg-l-pastel-yellow dark:bg-d-pastel-yellow p-4 overflow-y-auto
+}
+
+.responsive-footer {
+	@apply flex p-4 bg-l-pastel-blue dark:bg-d-pastel-blue text-l-text dark:text-d-text
+}
