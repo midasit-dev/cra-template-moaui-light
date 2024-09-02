@@ -1,6 +1,8 @@
 import React from "react";
 import DarkModeExample from "./samples/darkmode";
 import ResponsiveLayout from "./samples/responsive";
+import Responsive_1 from "./samples/responsive-1";
+import Item_1 from "./samples/item-1";
 
 function App() {
   return (

@@ -1,0 +1,14 @@
+.responsive-1-main {
+	@apply grid rounded-lg  lg:col-span-3 p-4 box-border border border-gray-300 dark:border-gray-600;
+}
+
+@media (min-width: 1024px) {
+	.responsive-1-main {
+		/** 전체높이 - Header H - Header Padding - Main Padding */
+		height: calc(100vh - 128px - 32px - 16px);
+	}
+}
+
+body {
+	@apply bg-[#f6f6f6] dark:bg-gray-900;
+}
