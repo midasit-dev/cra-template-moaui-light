@@ -1,0 +1,39 @@
+body {
+	@apply bg-gray-100 dark:bg-gray-900;
+}
+
+.bar-dev-container {
+	@apply grid grid-cols-1 gap-0 p-4;
+}
+
+.bar-dev-title {
+	@apply text-3xl font-medium text-gray-900 dark:text-white text-left;
+}
+
+.bar-dev-main {
+	@apply grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 mt-8;
+}
+
+.bar-dev-main > div {
+	@apply rounded-lg
+}
+
+.bar-dev-options-l {
+	@apply flex flex-col gap-4 w-full;
+}
+
+.bar-dev-options-l > div {
+	@apply rounded-lg;
+}
+
+.bar-dev-options-r {
+	@apply flex flex-col gap-4 w-full;
+}
+
+.bar-dev-options-r > div {
+	@apply rounded-lg;
+}
+
+.bar-dev-btn {
+	@apply flex items-center justify-end w-full mt-8;
+}

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	/** 아래와 같은 형태로 묶음이 가능하다. */
+  /* .custom-bg {
+    @apply bg-white dark:border-gray-800 dark:bg-gray-800;
+  } */
+}
